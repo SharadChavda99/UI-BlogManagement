@@ -1,0 +1,15 @@
+<div class="card w-100 custom-card">
+    <div class="card-body custom-card-body">
+        <p class="card-text">{{ blog.blogText | truncate: 10 }}</p>
+        <hr class="my-3 custom-divider">
+        <div class="d-flex justify-content-between">
+            <p class="card-text"><strong>Created by:</strong> {{ blog.username }}</p>
+            <p class="card-text"><strong>Created date:</strong> {{ blog.dateCreated | date: 'dd-MMM-yyyy' }}</p>
+            <div>
+                <button class="btn btn-outline-success btn-sm me-1" (click)="onEdit()">Edit</button>
+                <button class="btn btn-outline-danger btn-sm" (click)="onDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  

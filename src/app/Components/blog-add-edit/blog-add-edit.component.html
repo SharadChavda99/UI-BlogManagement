@@ -1,0 +1,32 @@
+<div class="main container my-4 custom-container">
+    <h3 class="mb-4 text-center">{{title}}</h3>
+  
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="blogText" class="form-label">Blog Text : </label>
+        <textarea id="blogText" class="form-control" formControlName="blogText"></textarea>
+        <div *ngIf="blogText?.invalid && (blogText?.touched || blogText?.dirty)" class="text-danger">
+          <small *ngIf="blogText?.errors?.['required']">Blog Text is required.</small>
+        </div>
+      </div>
+  
+      <div class="mb-4">
+        <label for="createdBy" class="form-label">Created By :  </label>
+        <input id="createdBy" type="text" class="form-control" formControlName="createdBy" />
+        <div *ngIf="createdBy?.invalid && (createdBy?.touched || createdBy?.dirty)" class="text-danger">
+          <small *ngIf="createdBy?.errors?.['required']">Created By is required.</small>
+        </div>
+      </div>
+  
+      <div class="mb-4">
+        <label for="createdDate" class="form-label">Created Date : </label>
+        <input id="createdDate" type="date" class="form-control" formControlName="createdDate" />
+        <div *ngIf="createdDate?.invalid && (createdDate?.touched || createdDate?.dirty)" class="text-danger">
+          <small *ngIf="createdDate?.errors?.['required']">Created Date is required.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="blogForm.invalid">Submit</button>
+    </form>
+  </div>
+  

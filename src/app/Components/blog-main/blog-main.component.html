@@ -1,0 +1,35 @@
+<!-- blog-management.component.html -->
+<div class="main container my-4 custom-container">
+  <div class="d-flex justify-content-between mb-2">
+    <button class="btn btn-primary" (click)="add()">Add</button>
+
+    <!-- Search bar with search button -->
+    <div class="input-group w-50">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search blogs...text/auther name"
+        [(ngModel)]="searchTerm"
+      />
+      <button class="btn btn-outline-secondary" type="button" (click)="onSearch()">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <div *ngFor="let blog of filterdBlogs" class="mb-4">
+    <app-blog-card
+      [blog]="blog"
+      (edit)="edit($event)"
+      (delete)="delete($event)"
+    ></app-blog-card>
+  </div>
+  <div class="row pagination-wrapper">
+    <app-pagination
+      [totalItems]="totalItems"
+      [itemsPerPage]="itemsPerPage"
+      [currentPage]="currentPage"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
+  </div>
+</div>

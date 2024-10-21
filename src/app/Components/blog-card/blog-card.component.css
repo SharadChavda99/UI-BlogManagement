@@ -1,0 +1,20 @@
+.custom-container {
+    background-color: #f0f4f8;
+    padding: 1.5rem;
+    border-radius: 0.3125rem;
+  }
+  
+  .custom-card {
+    background-color: #f8f9fa;
+    max-height: 7.5rem;
+    border: 0.0625rem solid #d1d1d1;
+  }
+  
+  .custom-card-body {
+    padding: 1rem;
+  }
+  
+  .custom-divider {
+    border-top: 0.125rem solid #7c7e80;
+  }
+  
